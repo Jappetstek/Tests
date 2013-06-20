@@ -1,0 +1,83 @@
+
+body {
+	background:url('LTTLQP3.png') #000000 top left no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+vertical-align:top; 
+text-align:center;
+z-index: -1;
+margin:0;
+padding:0;
+user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;
+ cursor:none;}
+ #roju{
+ height: 100%;
+ width:100%;
+ opacity:0;
+ background: black;}
+#roju #blink{
+position:fixed;
+width: 10px;
+height: 10px;
+top:5px;
+left:5px;
+font-weight: bold;
+font-size: 22px;
+font-family: monospace;
+color:#CFCFBF;
+text-align:left;
+z-index:2;
+} 
+#roju #content{
+transition-property: opacity;
+transition-delay: 4s;
+width: 90%;
+height: 100%;
+padding-left: 20px;
+top:6px;
+left:10px;
+font-weight: bold;
+font-size: 22px;
+font-family: monospace;
+color:#CFCFBF;
+text-align:left;
+opacity:0;
+}
+#roju .error{
+top:6px;
+height: 30px;
+background: #CFCFBF;
+color: black;
+}
+#roju .error > a{
+position:absolute;
+left:40%;
+}
+#roju p,a{max-width: 1000px}
+#roju li{
+color: #CCCCBF;
+padding-left:50px;
+}
+#roju .select1[selected="true"],#roju .select2[selected="true"]{
+background: #BFBFBA;
+color:black;
+}
+#roju .select1[selected="false"], #roju .select2[selected="false"],
+#roju .select1[selected="true"] .dsc, #roju .select2[selected="true"] .dsc{
+background: black;
+color:#BFBFBA ;
+}
+#roju .third{
+color: #BFBFBA}
+#roju .descr{
+color: #BFBFBA;
+position:absolute;
+bottom: 140px;
+left:16px}
+#roju .dsc{
+position:absolute;
+bottom:140px;
+left: 200px}
+#roju li[class^=select]:not([selected="true"]) a{opacity:0;}

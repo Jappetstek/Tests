@@ -1,0 +1,101 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>BSOD</title>
+<script type="text/javascript"> 
+
+var message="Sorry, right-click has been disabled"; 
+function clickIE() {if (document.all) {(message);return false;}} 
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) { 
+if (e.which==2||e.which==3) {(message);return false;}}} 
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;} 
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;} 
+document.oncontextmenu=new Function("return false") 
+// --> 
+</script> 
+<script>  
+
+
+var count=0;
+var stage=0;
+var stage2=3;
+counter=setInterval(timer, 4000); //1000 will  run it every 1 second
+
+function timer()
+{
+if(stage < 2){
+  count=count+1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     return;
+  }
+ 
+   if (count > 0 && stage == 0)
+  {
+     
+	  document.getElementById("roju").style.opacity=1;
+	  document.getElementById("content").style.opacity=1;
+	  stage=2;
+	  count=15;
+	 	  return;
+		  
+  }
+  return;
+  }
+     if (stage == 2)
+  {
+count=count-1;
+     document.getElementById("counter").innerHTML="Highlighted item is selected at..." + count;
+	 if(count == 0)
+	 {
+	 window.location='Win7Menu.htm';
+	 return;
+  }
+  return;
+}
+}
+
+
+
+</script>  
+<script type="text/javascript">
+function catchArrow(e){
+   var theKey=0;
+   e=(window.event)?event:e;
+   theKey=(e.keyCode)?e.keyCode:e.charCode;
+   if(theKey=="40"){ // 13 is the key code for ENTER
+document.getElementById('select2').setAttribute("selected", true);
+document.getElementById('select1').setAttribute("selected", false);
+   }
+   else if(theKey=="38"){ // 13 is the key code for ENTER
+document.getElementById('select1').setAttribute("selected", true);
+document.getElementById('select2').setAttribute("selected", false);
+}
+else if(theKey=="13"){
+if(document.getElementById('select2').getAttribute("selected") =="true"){
+window.location='Win7Menu.htm';
+return;
+}
+return;
+}
+}
+</script>
+ <link rel="stylesheet" type="text/css" href="styleBSOD.css" />
+</head><body scroll="no" onkeyup="catchArrow(event);"> 
+<div id="roju">
+	<div id="content">
+		<div class="error"><a>Windows Error Recovery</a></div>
+		<p class="first">Windows failed to start. A recent hardware or software change might be the cause.</p><br>
+		<p class="second">If Windows files have been damaged or configured incorrectly, Startup Repair can help diagnose and fix the problem. If power was interrupted during startup, choose start Windows Normally.</p>
+		<a class="third">(Use the arrow keys to highlight your choice.)</a><br><br>
+		<div id="select">
+		<li id="select1" class="select1" selected="true">Launch Startup Repair (Not recommended)<a class="dsc">Fix problems that are preventing Windows from starting</a></li>
+		<li id="select2" class="select2">Start Windows Normally<a class="dsc">Start Windows with default settings</a></li></div>
+		<br><a id="counter">Time left until highlighted is selected... </a><br>
+		<a class="descr">Description:</a>
+	</div>
+
+</div>
+ 
+</body></html>
